@@ -1,0 +1,32 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+    <tr>
+        <th>{{ lang('WORKSHOPS_ATTENDEES_USER_ID') }}</th>
+        <th>{{ lang('WORKSHOPS_ATTENDEES_START_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_ATTENDEES_END_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_ATTENDEES_INSTRUCTOR') }}</th>
+        <th>{{ lang('WORKSHOPS_ATTENDEES_JUNIOR_INSTRUCTOR') }}</th>
+        <th>{{ lang('WORKSHOPS_ATTENDEES_WORKSHOP_ID') }}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for workshop_attendee in workshop_attendees %}
+    <tr>
+        <td>{{ workshop_attendee.workshop_attendees_user_id }}</td>
+        <td>{{ workshop_attendee.workshop_attendees_start_date }}</td>
+        <td>{{ workshop_attendee.workshop_attendees_end_date }}</td>
+        <td>{{ workshop_attendee.workshop_attendees_is_instructor_checked }}</td>
+        <td>{{ workshop_attendee.workshop_attendees_is_junior_instructor_checked }}</td>
+        <td>{{ workshop_attendee.workshop_attendees_workshop_id }}</td>
+        <td><a href="update/{{ workshop_attendee.workshops_attendees_id }}"> {{ lang('WORKSHOPS_EDIT_ATTENDEE') }}</a></td>
+        <td><a href="delete/{{ workshop_attendee.workshops_attendees_id }}"> {{ lang('WORKSHOPS_DELETE_ATTENDEE') }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table><tr><td><a href="add"> {{ lang('WORKSHOPS_ADD_ATTENDEE') }}</a></td></tr></table>
+
+{% include 'overall_footer.html' %}

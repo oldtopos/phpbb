@@ -1,0 +1,18 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+	<fieldset>
+        <dl>
+            <dt><label for="workshops_schedule_attendees_user_id">{{ lang('WORKSHOPS_SCHEDULE_ATTENDEES_USER_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_attendees_user_id }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_attendees_schedule_id">{{ lang('WORKSHOPS_SCHEDULE_ATTENDEES_SCHEDULE_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_attendees_schedule_id }}</dd>
+        </dl>
+    </fieldset>
+</table>
+
+{% include 'overall_footer.html' %}

@@ -1,0 +1,34 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+    <tr>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_TITLE') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_LOCATION') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_START_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_END_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_MEETING_START_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_MEETING_START_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_WORKSHOP_ID') }}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for workshop_schedule_item in workshops_schedule %}
+    <tr>
+        <td>{{ workshop_schedule_item.workshops_schedule_title }}</td>
+        <td>{{ workshop_schedule_item.workshops_schedule_location }}</td>
+        <td>{{ workshop_schedule_item.workshops_schedule_start_date }}</td>
+        <td>{{ workshop_schedule_item.workshops_schedule_end_date }}</td>
+        <td>{{ workshop_schedule_item.workshops_schedule_meeting_location }}</td>
+        <td>{{ workshop_schedule_item.workshops_schedule_meeting_time }}</td>
+        <td>{{ workshop_schedule_item.workshops_schedule_workshop_id }}</td>
+        <td><a href="update/{{ workshop_schedule_item.workshops_schedule_id }}"> {{ lang('WORKSHOPS_EDIT_WORKSHOP_SCHEDULE') }}</a></td>
+        <td><a href="delete/{{ workshop_schedule_item.workshops_schedule_id }}"> {{ lang('WORKSHOPS_DELETE_WORKSHOP_SCHEDULE') }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table><tr><td><a href="add"> {{ lang('WORKSHOPS_ADD_WORKSHOP_SCHEDULE') }}</a></td></tr></table>
+
+{% include 'overall_footer.html' %}

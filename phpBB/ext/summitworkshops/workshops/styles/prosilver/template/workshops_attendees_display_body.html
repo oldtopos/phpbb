@@ -1,0 +1,34 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+	<fieldset>
+        <dl>
+            <dt><label for="workshop_attendees_user_id">{{ lang('WORKSHOPS_ATTENDEES_USER_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshop_attendees_user_id }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_start_date">{{ lang('WORKSHOPS_ATTENDEES_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshop_attendees_start_date }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_end_date">{{ lang('WORKSHOPS_ATTENDEES_END_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshop_attendees_end_date }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_is_instructor">{{ lang('WORKSHOPS_ATTENDEES_INSTRUCTOR') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshop_attendees_is_instructor }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_is_junior_instructor">{{ lang('WORKSHOPS_ATTENDEES_JUNIOR_INSTRUCTOR') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshop_attendees_is_junior_instructor }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_workshop_id">{{ lang('WORKSHOPS_ATTENDEES_WORKSHOP_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshop_attendees_workshop_id }}</dd>
+        </dl>
+    </fieldset>
+</table>
+
+{% include 'overall_footer.html' %}

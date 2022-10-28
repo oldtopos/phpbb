@@ -1,0 +1,53 @@
+{% include 'overall_header.html' %}
+
+<form id="workshops" method="post" action="{U_ACTION}"{S_FORM_ENCTYPE}>
+	<fieldset>
+		<h2>{{ lang('WORKSHOPS_CREATE') }}</h2>
+
+        <dl>
+            <dt><label for="workshops_title">{{ lang('WORKSHOPS_INFO_NAME') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_title" name="workshops_title" value="{{ workshops_title }}" minlength="10" maxlength="255" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_description">{{ lang('WORKSHOPS_INFO_DESCRIPTION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_description" name="workshops_description" value="{{ workshops_description }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_start_date">{{ lang('WORKSHOPS_INFO_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshops_start_date" name="workshops_start_date" value="{{ workshops_start_date }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_end_date">{{ lang('WORKSHOPS_INFO_END_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshops_end_date" name="workshops_end_date" value="{{ workshops_end_date }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_country">{{ lang('WORKSHOPS_INFO_COUNTRY') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_country" name="workshops_country" value="{{ workshops_country }}" minlength="3" maxlength="3" size="3" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_location">{{ lang('WORKSHOPS_INFO_LOCATION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_location" name="workshops_location" value="{{ workshops_location }}" minlength="10" maxlength="32" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_deposit_amount">{{ lang('WORKSHOPS_INFO_DEPOSIT') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshops_deposit_amount" name="workshops_deposit_amount" value="{{ workshops_deposit_amount }}" minlength="2" maxlength="7" size="5" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_tuition_amount">{{ lang('WORKSHOPS_INFO_TUITION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshops_tuition_amount" name="workshops_tuition_amount" value="{{ workshops_tuition_amount }}" minlength="2" maxlength="7" size="5" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_max_attendees">{{ lang('WORKSHOPS_INFO_ATTENDEES') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshops_max_attendees" name="workshops_max_attendees" value="{{ workshops_max_attendees }}" minlength="2" maxlength="7" size="5" /></dd>
+        </dl>
+	</fieldset>
+
+	<fieldset>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+		</p>
+		{{ S_FORM_TOKEN }}
+	</fieldset>
+</form>
+
+{% include 'overall_footer.html' %}

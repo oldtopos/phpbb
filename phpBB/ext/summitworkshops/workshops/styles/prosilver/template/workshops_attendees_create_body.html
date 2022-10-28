@@ -1,0 +1,41 @@
+{% include 'overall_header.html' %}
+
+<form id="workshops" method="post" action="{U_ACTION}"{S_FORM_ENCTYPE}>
+	<fieldset>
+		<h2>{{ lang('WORKSHOPS_CREATE') }}</h2>
+
+        <dl>
+            <dt><label for="workshop_attendees_user_id">{{ lang('WORKSHOPS_ATTENDEES_USER_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshop_attendees_user_id" name="workshop_attendees_user_id" value="{{ workshop_attendees_user_id }}" minlength="1" maxlength="7" size="8" /></dd>
+        </dl>
+       <dl>
+            <dt><label for="workshop_attendees_start_date">{{ lang('WORKSHOPS_ATTENDEES_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshop_attendees_start_date" name="workshop_attendees_start_date" value="{{ workshop_attendees_start_date }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_end_date">{{ lang('WORKSHOPS_ATTENDEES_END_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshop_attendees_end_date" name="workshop_attendees_end_date" value="{{ workshop_attendees_end_date }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_is_instructor">{{ lang('WORKSHOPS_ATTENDEES_INSTRUCTOR') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="checkbox" id="workshop_attendees_is_instructor" name="workshop_attendees_is_instructor" value="{{ workshop_attendees_is_instructor }}" {{ workshop_attendees_is_instructor_checked }}/></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshop_attendees_is_junior_instructor">{{ lang('WORKSHOPS_ATTENDEES_JUNIOR_INSTRUCTOR') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="checkbox" id="workshop_attendees_is_junior_instructor" name="workshop_attendees_is_junior_instructor" value="{{ workshop_attendees_is_junior_instructor }}"  {{ workshop_attendees_is_junior_instructor_checked }}/></dd>
+        </dl>
+       <dl>
+            <dt><label for="workshop_attendees_workshop_id">{{ lang('WORKSHOPS_ATTENDEES_WORKSHOP_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshop_attendees_workshop_id" name="workshop_attendees_workshop_id" value="{{ workshop_attendees_workshop_id }}" minlength="1" maxlength="7" size="5" /></dd>
+        </dl>
+	</fieldset>
+
+	<fieldset>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+		</p>
+		{{ S_FORM_TOKEN }}
+	</fieldset>
+</form>
+
+{% include 'overall_footer.html' %}

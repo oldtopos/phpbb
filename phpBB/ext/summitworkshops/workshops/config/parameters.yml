@@ -1,0 +1,2 @@
+parameters:
+    summitworkshops.workshops.tables.workshops_table: '%core.table_prefix%summitworkshops_workshops_table'

@@ -1,0 +1,103 @@
+imports:
+    - { resource: parameters.yml }
+
+services:
+    summitworkshops.workshops.controller.main:
+        class: summitworkshops\workshops\controller\main_controller
+        arguments:
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+
+    summitworkshops.workshops.controller.workshop:
+        class: summitworkshops\workshops\controller\workshop_controller
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+            - '@request'
+
+    summitworkshops.workshops.controller.workshop_topics:
+        class: summitworkshops\workshops\controller\workshop_topics_controller
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+            - '@request'
+
+    summitworkshops.workshops.controller.workshop_schedule:
+        class: summitworkshops\workshops\controller\workshop_schedule_controller
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+            - '@request'
+
+    summitworkshops.workshops.controller.workshop_attendees:
+        class: summitworkshops\workshops\controller\workshop_attendees_controller
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+            - '@request'
+
+    summitworkshops.workshops.controller.workshop_schedule_attendees:
+        class: summitworkshops\workshops\controller\workshop_schedule_attendees_controller
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+            - '@request'
+
+    summitworkshops.workshops.controller.acp:
+        class: summitworkshops\workshops\controller\acp_controller
+        arguments:
+            - '@config'
+            - '@language'
+            - '@log'
+            - '@request'
+            - '@template'
+            - '@user'
+
+    summitworkshops.workshops.controller.mcp:
+        class: summitworkshops\workshops\controller\mcp_controller
+        arguments:
+            - '@language'
+            - '@request'
+            - '@template'
+
+    summitworkshops.workshops.controller.ucp:
+        class: summitworkshops\workshops\controller\ucp_controller
+        arguments:
+            - '@dbal.conn'
+            - '@language'
+            - '@request'
+            - '@template'
+            - '@user'
+
+    summitworkshops.workshops.service:
+        class: summitworkshops\workshops\service
+        arguments:
+            - '@user'
+            - '%summitworkshops.workshops.tables.workshops_table%'
+
+    summitworkshops.workshops.listener:
+        class: summitworkshops\workshops\event\main_listener
+        arguments:
+            - '@language'
+            - '@controller.helper'
+            - '@template'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }

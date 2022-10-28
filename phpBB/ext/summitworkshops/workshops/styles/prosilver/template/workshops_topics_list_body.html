@@ -1,0 +1,26 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+    <tr>
+        <th>{{ lang('WORKSHOPS_TOPIC_TITLE') }}</th>
+        <th>{{ lang('WORKSHOPS_TOPIC_DESCRIPTION') }}</th>
+        <th>{{ lang('WORKSHOPS_TOPIC_IMAGE') }}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for workshop_topic in workshops_topics %}
+    <tr>
+        <td>{{ workshop_topic.workshops_topic_title }}</td>
+        <td>{{ workshop_topic.workshops_topic_description }}</td>
+        <td>{{ workshop_topic.workshops_topic_image }}</td>
+        <td><a href="topics/update/{{ workshop_topic.workshops_topic_id }}"> {{ lang('WORKSHOPS_EDIT_TOPIC') }}</a></td>
+        <td><a href="topics/delete/{{ workshop_topic.workshops_topic_id }}"> {{ lang('WORKSHOPS_DELETE_TOPIC') }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table><tr><td><a href="topics/add"> {{ lang('WORKSHOPS_ADD_TOPIC') }}</a></td></tr></table>
+
+{% include 'overall_footer.html' %}

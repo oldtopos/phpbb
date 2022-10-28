@@ -1,0 +1,46 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+	<fieldset>
+        <dl>
+            <dt><label for="workshops_title">{{ lang('WORKSHOPS_INFO_NAME') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_title }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_description">{{ lang('WORKSHOPS_INFO_DESCRIPTION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_description }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_country">{{ lang('WORKSHOPS_INFO_COUNTRY') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_country }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_location">{{ lang('WORKSHOPS_INFO_LOCATION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_location }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_start_date">{{ lang('WORKSHOPS_INFO_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_start_date }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_end_date">{{ lang('WORKSHOPS_INFO_END_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_end_date }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_deposit_amount">{{ lang('WORKSHOPS_INFO_DEPOSIT') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_deposit_amount }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_tuition_amount">{{ lang('WORKSHOPS_INFO_TUITION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_tuition_amount }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_max_attendees">{{ lang('WORKSHOPS_INFO_ATTENDEES') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_max_attendees }}</dd>
+        </dl>
+    </fieldset>
+</table>
+
+{% include 'overall_footer.html' %}

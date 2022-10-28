@@ -1,0 +1,24 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+    <tr>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_ATTENDEES_USER_ID') }}</th>
+        <th>{{ lang('WORKSHOPS_SCHEDULE_ATTENDEES_SCHEDULE_ID') }}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for workshop_schedule_attendee in workshop_schedule_attendees %}
+    <tr>
+        <td>{{ workshop_schedule_attendee.workshops_schedule_attendees_user_id }}</td>
+        <td>{{ workshop_schedule_attendee.workshops_schedule_attendees_schedule_id }}</td>
+        <td><a href="attendee/update/{{ workshop_schedule_attendee.workshops_schedule_attendees_id }}"> {{ lang('WORKSHOPS_SCHEDULE_EDIT_ATTENDEE') }}</a></td>
+        <td><a href="attendee/delete/{{ workshop_schedule_attendee.workshops_schedule_attendees_id }}"> {{ lang('WORKSHOPS_SCHEDULE_DELETE_ATTENDEE') }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table><tr><td><a href="attendee/add"> {{ lang('WORKSHOPS_SCHEDULE_ADD_ATTENDEE') }}</a></td></tr></table>
+
+{% include 'overall_footer.html' %}

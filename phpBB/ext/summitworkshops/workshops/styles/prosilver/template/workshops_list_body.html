@@ -1,0 +1,32 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+    <tr>
+        <th>{{ lang('WORKSHOPS_INFO_NAME') }}</th>
+        <th>{{ lang('WORKSHOPS_INFO_COUNTRY') }}</th>
+        <th>{{ lang('WORKSHOPS_INFO_LOCATION') }}</th>
+        <th>{{ lang('WORKSHOPS_INFO_START_DATE') }}</th>
+        <th>{{ lang('WORKSHOPS_INFO_TUITION') }}</th>
+        <th>{{ lang('WORKSHOPS_INFO_ATTENDEES') }}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for workshop in workshops %}
+    <tr>
+        <td>{{ workshop.workshops_title }}</td>
+        <td>{{ workshop.workshops_country }}</td>
+        <td>{{ workshop.workshops_location }}</td>
+        <td>{{ workshop.workshops_start_date }}</td>
+        <td>{{ workshop.workshops_tuition_amount }}</td>
+        <td>{{ workshop.workshops_max_attendees }}</td>
+        <td><a href="workshops/update/{{ workshop.workshops_id }}"> {{ lang('WORKSHOPS_EDIT_WORKSHOP') }}</a></td>
+        <td><a href="workshops/delete/{{ workshop.workshops_id }}"> {{ lang('WORKSHOPS_DELETE_WORKSHOP') }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table><tr><td><a href="workshops/add"> {{ lang('WORKSHOPS_ADD_WORKSHOP') }}</a></td></tr></table>
+
+{% include 'overall_footer.html' %}

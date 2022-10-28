@@ -1,0 +1,29 @@
+{% include 'overall_header.html' %}
+
+<form id="workshops" method="post" action="{U_ACTION}"{S_FORM_ENCTYPE}>
+	<fieldset>
+		<h2>{{ lang('WORKSHOPS_CREATE') }}</h2>
+
+        <dl>
+            <dt><label for="workshops_topic_title">{{ lang('WORKSHOPS_TOPIC_TITLE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_topic_title" name="workshops_topic_title" value="{{ workshops_topic_title }}" minlength="10" maxlength="255" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_topic_description">{{ lang('WORKSHOPS_TOPIC_DESCRIPTION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_topic_description" name="workshops_topic_description" value="{{ workshops_topic_description }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_topic_image">{{ lang('WORKSHOPS_TOPIC_IMAGE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_topic_image" name="workshops_topic_image" value="{{ workshops_topic_image }}" minlength="10" maxlength="256" size="32" /></dd>
+        </dl>
+	</fieldset>
+
+	<fieldset>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+		</p>
+		{{ S_FORM_TOKEN }}
+	</fieldset>
+</form>
+
+{% include 'overall_footer.html' %}

@@ -1,0 +1,46 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+	<fieldset>
+        <dl>
+            <dt><label for="workshops_schedule_title">{{ lang('WORKSHOPS_SCHEDULE_TITLE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_title }}</dd>
+         </dl>
+        <dl>
+            <dt><label for="workshops_schedule_description">{{ lang('WORKSHOPS_SCHEDULE_DESCRIPTION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_description }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_location">{{ lang('WORKSHOPS_SCHEDULE_LOCATION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_location }}</dd>
+         </dl>
+        <dl>
+            <dt><label for="workshops_start_date">{{ lang('WORKSHOPS_SCHEDULE_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_start_date }}</dd>
+         </dl>
+        <dl>
+            <dt><label for="workshops_end_date">{{ lang('WORKSHOPS_SCHEDULE_END_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_end_date }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_meeting_location">{{ lang('WORKSHOPS_SCHEDULE_MEETING_LOCATION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_meeting_location }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_meeting_time">{{ lang('WORKSHOPS_SCHEDULE_MEETING_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_meeting_time }}</dd>
+         </dl>
+        <dl>
+            <dt><label for="workshops_schedule_attendee_limit">{{ lang('WORKSHOPS_SCHEDULE_ATTENDEES') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_attendee_limit }}</dd>
+         </dl>
+        <dl>
+            <dt><label for="workshops_schedule_workshop_id">{{ lang('WORKSHOPS_SCHEDULE_WORKSHOP_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_schedule_workshop_id }}</dd>
+        </dl>
+	</fieldset>
+</table>
+
+{% include 'overall_footer.html' %}

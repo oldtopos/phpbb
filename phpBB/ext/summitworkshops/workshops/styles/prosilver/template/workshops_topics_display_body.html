@@ -1,0 +1,22 @@
+{% include 'overall_header.html' %}
+
+<h2>{{ WORKSHOPS_MESSAGE }}</h2>
+
+<table>
+	<fieldset>
+        <dl>
+            <dt><label for="workshops_topic_title">{{ lang('WORKSHOPS_TOPIC_TITLE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_topic_title }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_topic_description">{{ lang('WORKSHOPS_TOPIC_DESCRIPTION') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_topic_description }}</dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_topic_image">{{ lang('WORKSHOPS_TOPIC_IMAGE') }}{{ lang('COLON') }}</label></dt>
+            <dd>{{ workshops_topic_image }}</dd>
+        </dl>
+    </fieldset>
+</table>
+
+{% include 'overall_footer.html' %}

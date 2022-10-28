@@ -1,0 +1,53 @@
+{% include 'overall_header.html' %}
+
+<form id="workshops" method="post" action="{U_ACTION}"{S_FORM_ENCTYPE}>
+	<fieldset>
+		<h2>{{ lang('WORKSHOPS_CREATE') }}</h2>
+
+        <dl>
+            <dt><label for="workshops_schedule_title">{{ lang('WORKSHOPS_SCHEDULE_TITLE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_schedule_title" name="workshops_schedule_title" value="{{ workshops_schedule_title }}" minlength="10" maxlength="255" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_description">{{ lang('WORKSHOPS_SCHEDULE_DESCRIPTION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_schedule_description" name="workshops_schedule_description" value="{{ workshops_schedule_description }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_location">{{ lang('WORKSHOPS_SCHEDULE_LOCATION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_schedule_location" name="workshops_schedule_location" value="{{ workshops_schedule_location }}" minlength="10" maxlength="32" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_start_date">{{ lang('WORKSHOPS_SCHEDULE_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshops_schedule_start_date" name="workshops_schedule_start_date" value="{{ workshops_schedule_start_date }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_end_date">{{ lang('WORKSHOPS_SCHEDULE_END_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshops_schedule_end_date" name="workshops_schedule_end_date" value="{{ workshops_schedule_end_date }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_meeting_location">{{ lang('WORKSHOPS_SCHEDULE_MEETING_LOCATION') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="text" id="workshops_schedule_meeting_location" name="workshops_schedule_meeting_location" value="{{ workshops_schedule_meeting_location }}" minlength="10" maxlength="32" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_meeting_time">{{ lang('WORKSHOPS_SCHEDULE_MEETING_START_DATE') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="datetime-local" id="workshops_schedule_meeting_time" name="workshops_schedule_meeting_time" value="{{ workshops_schedule_meeting_time }}" minlength="10" maxlength="2000" size="32" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_attendee_limit">{{ lang('WORKSHOPS_SCHEDULE_ATTENDEES') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshops_schedule_attendee_limit" name="workshops_schedule_attendee_limit" value="{{ workshops_schedule_attendee_limit }}" minlength="2" maxlength="7" size="5" /></dd>
+        </dl>
+        <dl>
+            <dt><label for="workshops_schedule_workshop_id">{{ lang('WORKSHOPS_SCHEDULE_WORKSHOP_ID') }}{{ lang('COLON') }}</label></dt>
+            <dd><input type="number" id="workshops_schedule_workshop_id" name="workshops_schedule_workshop_id" value="{{ workshops_schedule_workshop_id }}" minlength="2" maxlength="7" size="5" /></dd>
+        </dl>
+	</fieldset>
+
+	<fieldset>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+		</p>
+		{{ S_FORM_TOKEN }}
+	</fieldset>
+</form>
+
+{% include 'overall_footer.html' %}
