@@ -5,7 +5,6 @@
 
 # Excludes user data
 /phpBB/config*.php*
-/phpBB/ext/*
 /phpBB/files/*
 /phpBB/images/avatars/gallery/*
 /phpBB/images/avatars/upload/*
