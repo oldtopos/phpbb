@@ -35,6 +35,9 @@ class workshop_schedule_controller
 	/** @var \phpbb\request\request */
 	protected $request;
 
+	/** @var \phpbb\user */
+	protected $user;
+
 	/** @var string Custom form action */
 	protected $u_action;
 
@@ -46,8 +49,9 @@ class workshop_schedule_controller
 	 * @param \phpbb\controller\helper	$helper		Controller helper object
 	 * @param \phpbb\template\template	$template	Template object
 	 * @param \phpbb\language\language	$language	Language object
+	 * @param \phpbb\user				$user		User object
 	 */
-	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\language\language $language, \phpbb\request\request $request)
+	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\language\language $language, \phpbb\request\request $request, \phpbb\user $user)
 	{
 		$this->db		= $db;
 		$this->config	= $config;
@@ -55,6 +59,7 @@ class workshop_schedule_controller
 		$this->template	= $template;
 		$this->language	= $language;
 		$this->request 	= $request;
+		$this->user		= $user;
 
 		$this->u_action = 'add';
 	}
@@ -120,6 +125,7 @@ class workshop_schedule_controller
 		$this->template->assign_var('WORKSHOPS_MESSAGE', $this->language->lang($l_message, $id));
 
 		$this->template->assign_var('workshops_schedule', $workshops_data );
+		$this->template->assign_var('workshops_schedule_workshop_id', $workshop_id );
 
 		return $this->helper->render('@summitworkshops_workshops/workshops_schedule_list_body.html', $id);
 	}
@@ -156,7 +162,7 @@ class workshop_schedule_controller
 	 *
 	 * @return \Symfony\Component\HttpFoundation\Response A Symfony Response object
 	 */
-	public function add()
+	public function add($workshop_id)
 	{
 		// Create an array to collect errors that will be output to the user
 		$errors = [];
@@ -180,6 +186,8 @@ class workshop_schedule_controller
 			'ERROR_MSG'		=> $s_errors ? implode('<br />', $errors) : '',
 
 			'U_ACTION'	=> $this->u_action,
+
+			'workshops_schedule_workshop_id' => $workshop_id,
 		]);
 
 		return $this->helper->render('@summitworkshops_workshops/workshops_schedule_create_body.html', $id);

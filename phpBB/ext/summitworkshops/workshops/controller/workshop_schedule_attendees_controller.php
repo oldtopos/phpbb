@@ -35,6 +35,9 @@ class workshop_schedule_attendees_controller
 	/** @var \phpbb\request\request */
 	protected $request;
 
+	/** @var \phpbb\user */
+	protected $user;
+
 	/** @var string Custom form action */
 	protected $u_action;
 
@@ -46,8 +49,9 @@ class workshop_schedule_attendees_controller
 	 * @param \phpbb\controller\helper	$helper		Controller helper object
 	 * @param \phpbb\template\template	$template	Template object
 	 * @param \phpbb\language\language	$language	Language object
+	 * @param \phpbb\user				$user		User object
 	 */
-	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\language\language $language, \phpbb\request\request $request)
+	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\language\language $language, \phpbb\request\request $request, \phpbb\user $user)
 	{
 		$this->db		= $db;
 		$this->config	= $config;
@@ -55,6 +59,7 @@ class workshop_schedule_attendees_controller
 		$this->template	= $template;
 		$this->language	= $language;
 		$this->request 	= $request;
+		$this->user		= $user;
 
 		$this->u_action = 'add';
 	}

@@ -63,11 +63,19 @@ summitworkshops_workshops_workshop_schedule_workshop_list:
     path: /workshops/schedule/workshop/{workshop_id}
     defaults: { _controller: summitworkshops.workshops.controller.workshop_schedule:list_workshop }
     requirements:
-        id: \d+
+        workshop_id: \d+
 
 summitworkshops_workshops_workshop_schedule_add:
-    path: /workshops/schedule/add
+    path: /workshops/schedule/add/{workshop_id}
     defaults: { _controller: summitworkshops.workshops.controller.workshop_schedule:add }
+    requirements:
+        workshop_id: \d+
+
+summitworkshops_workshops_workshop_schedule_workshop_add:
+    path: /workshops/schedule/workshop/add/{workshop_id}
+    defaults: { _controller: summitworkshops.workshops.controller.workshop_schedule:add }
+    requirements:
+        workshop_id: \d+
 
 summitworkshops_workshops_workshop_schedule_update:
     path: /workshops/schedule/update/{id}
@@ -96,7 +104,7 @@ summitworkshops_workshops_workshop_attendees_workshop_list:
     path: /workshops/attendees/workshop/{workshop_id}
     defaults: { _controller: summitworkshops.workshops.controller.workshop_attendees:list_workshop }
     requirements:
-        id: \d+
+        workshop_id: \d+
 
 summitworkshops_workshops_workshop_attendees_add:
     path: /workshops/attendees/add
@@ -129,7 +137,7 @@ summitworkshops_workshops_schedule_attendees_workshop_list:
     path: /workshops/schedule/attendees/schedule/{schedule_id}
     defaults: { _controller: summitworkshops.workshops.controller.workshop_schedule_attendees:list_schedule }
     requirements:
-        id: \d+
+        schedule_id: \d+
 
 summitworkshops_workshops_workshop_schedule_attendees_add:
     path: /workshops/schedule/attendees/add

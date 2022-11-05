@@ -79,7 +79,7 @@ class main_listener implements EventSubscriberInterface
 	public function add_page_header_link()
 	{
 		$this->template->assign_vars([
-			'U_WORKSHOPS_PAGE'	=> $this->helper->route('summitworkshops_workshops_controller', ['name' => 'world']),
+			'U_WORKSHOPS_PAGE'	=> $this->helper->route('summitworkshops_workshops_workshop_list', ['name' => 'workshops']),
 		]);
 	}
 

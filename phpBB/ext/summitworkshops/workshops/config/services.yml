@@ -19,6 +19,7 @@ services:
             - '@template'
             - '@language'
             - '@request'
+            - '@user'
 
     summitworkshops.workshops.controller.workshop_topics:
         class: summitworkshops\workshops\controller\workshop_topics_controller
@@ -29,6 +30,7 @@ services:
             - '@template'
             - '@language'
             - '@request'
+            - '@user'
 
     summitworkshops.workshops.controller.workshop_schedule:
         class: summitworkshops\workshops\controller\workshop_schedule_controller
@@ -39,6 +41,7 @@ services:
             - '@template'
             - '@language'
             - '@request'
+            - '@user'
 
     summitworkshops.workshops.controller.workshop_attendees:
         class: summitworkshops\workshops\controller\workshop_attendees_controller
@@ -49,6 +52,7 @@ services:
             - '@template'
             - '@language'
             - '@request'
+            - '@user'
 
     summitworkshops.workshops.controller.workshop_schedule_attendees:
         class: summitworkshops\workshops\controller\workshop_schedule_attendees_controller
@@ -59,6 +63,7 @@ services:
             - '@template'
             - '@language'
             - '@request'
+            - '@user'
 
     summitworkshops.workshops.controller.acp:
         class: summitworkshops\workshops\controller\acp_controller

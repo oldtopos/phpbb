@@ -2,7 +2,7 @@
 
 <h2>{{ WORKSHOPS_MESSAGE }}</h2>
 
-<table>
+<table width="100%">
     <tr>
         <th>{{ lang('WORKSHOPS_SCHEDULE_TITLE') }}</th>
         <th>{{ lang('WORKSHOPS_SCHEDULE_LOCATION') }}</th>
@@ -29,6 +29,6 @@
     {% endfor %}
 </table>
 
-<table><tr><td><a href="add"> {{ lang('WORKSHOPS_ADD_WORKSHOP_SCHEDULE') }}</a></td></tr></table>
+<table><tr><td><a href="add/{{ workshops_schedule_workshop_id }}""> {{ lang('WORKSHOPS_ADD_WORKSHOP_SCHEDULE') }}</a></td></tr></table>
 
 {% include 'overall_footer.html' %}

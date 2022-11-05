@@ -81,12 +81,14 @@ $lang = array_merge($lang, [
 	'ACP_WORKSHOPS_GOODBYE'			=> 'Should say goodbye?',
 	'ACP_WORKSHOPS_SETTING_SAVED'	=> 'Settings have been saved successfully!',
 
-	'WORKSHOPS_PAGE'			=> 'Workshops Page',
-	'VIEWING_SUMMITWORKSHOPS_WORKSHOPS'			=> 'Viewing Summit Workshops page',
+	'WORKSHOPS_PAGE'					=> 'Workshops List',
+	'VIEWING_SUMMITWORKSHOPS_WORKSHOPS'	=> 'Viewing Summit Workshops page',
 
 	'WORKSHOPS_EDIT_WORKSHOP' => 'Edit',
 	'WORKSHOPS_DELETE_WORKSHOP' => 'Delete',
 	'WORKSHOPS_ADD_WORKSHOP' => 'Add New Workshop',
+	'WORKSHOPS_SCHEDULE_WORKSHOP' => 'View Schedule',
+	'WORKSHOPS_ATTENDEES_WORKSHOP' => 'View Attendees',
 
 	'WORKSHOPS_EDIT_TOPIC' => 'Edit',
 	'WORKSHOPS_DELETE_TOPIC' => 'Delete',

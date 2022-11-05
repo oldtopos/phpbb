@@ -2,7 +2,8 @@
 
 <h2>{{ WORKSHOPS_MESSAGE }}</h2>
 
-<table>
+
+<table width="100%">
     <tr>
         <th>{{ lang('WORKSHOPS_INFO_NAME') }}</th>
         <th>{{ lang('WORKSHOPS_INFO_COUNTRY') }}</th>
@@ -10,6 +11,8 @@
         <th>{{ lang('WORKSHOPS_INFO_START_DATE') }}</th>
         <th>{{ lang('WORKSHOPS_INFO_TUITION') }}</th>
         <th>{{ lang('WORKSHOPS_INFO_ATTENDEES') }}</th>
+        <th></th>
+        <th></th>
         <th></th>
         <th></th>
     </tr>
@@ -23,6 +26,8 @@
         <td>{{ workshop.workshops_max_attendees }}</td>
         <td><a href="workshops/update/{{ workshop.workshops_id }}"> {{ lang('WORKSHOPS_EDIT_WORKSHOP') }}</a></td>
         <td><a href="workshops/delete/{{ workshop.workshops_id }}"> {{ lang('WORKSHOPS_DELETE_WORKSHOP') }}</a></td>
+        <td><a href="workshops/schedule/workshop/{{ workshop.workshops_id }}"> {{ lang('WORKSHOPS_SCHEDULE_WORKSHOP') }}</a></td>
+        <td><a href="workshops/attendees/workshop/{{ workshop.workshops_id }}"> {{ lang('WORKSHOPS_ATTENDEES_WORKSHOP') }}</a></td>
     </tr>
     {% endfor %}
 </table>

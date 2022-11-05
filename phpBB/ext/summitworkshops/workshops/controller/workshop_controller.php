@@ -35,6 +35,9 @@ class workshop_controller
 	/** @var \phpbb\request\request */
 	protected $request;
 
+	/** @var \phpbb\user */
+	protected $user;
+
 	/** @var string Custom form action */
 	protected $u_action;
 
@@ -46,8 +49,9 @@ class workshop_controller
 	 * @param \phpbb\controller\helper	$helper		Controller helper object
 	 * @param \phpbb\template\template	$template	Template object
 	 * @param \phpbb\language\language	$language	Language object
+	 * @param \phpbb\user				$user		User object
 	 */
-	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\language\language $language, \phpbb\request\request $request)
+	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\language\language $language, \phpbb\request\request $request, \phpbb\user $user)
 	{
 		$this->db		= $db;
 		$this->config	= $config;
@@ -55,6 +59,7 @@ class workshop_controller
 		$this->template	= $template;
 		$this->language	= $language;
 		$this->request 	= $request;
+		$this->user		= $user;
 
 		$this->u_action = 'add';
 	}
@@ -134,6 +139,10 @@ class workshop_controller
 
 			$sql = 'INSERT INTO ' . WORKSHOPS_TABLE . ' ' . $this->db->sql_build_array('INSERT', $workshop_info);
 			$this->db->sql_query($sql); 
+
+			$url = append_sid( $this->helper->route('summitworkshops_workshops_workshop_list') );
+			$response = new \Symfony\Component\HttpFoundation\RedirectResponse($url, 302);
+			$response->send();
 		}
 
 		$id = 42;
@@ -170,6 +179,10 @@ class workshop_controller
 						SET ".  $this->db->sql_build_array("UPDATE", $workshop_info) . "
 						WHERE workshops_id = '" . $id . "'";
 			$this->db->sql_query($sql);
+
+			$url = append_sid( $this->helper->route('summitworkshops_workshops_workshop_list') );
+			$response = new \Symfony\Component\HttpFoundation\RedirectResponse($url, 302);
+			$response->send();
 		}
 
 		// First executing a SELECT query.
@@ -210,8 +223,10 @@ class workshop_controller
 			WHERE workshops_id = ' . $id;
 		$result = $this->db->sql_query($sql);
 
-		return $this->helper->render('@summitworkshops_workshops/workshops_display_body.html', $id);
-	}
+		$url = append_sid( $this->helper->route('summitworkshops_workshops_workshop_list') );
+		$response = new \Symfony\Component\HttpFoundation\RedirectResponse($url, 302);
+		$response->send();
+}
 
 	/**
 	 * Set custom form action.
@@ -235,6 +250,7 @@ class workshop_controller
 			'workshops_end_date' => $this->request->variable('workshops_end_date', '2023-01-01 00:00:00', true),
 			'workshops_deposit_amount' => $this->request->variable('workshops_deposit_amount', 99.0, true),
 			'workshops_tuition_amount' => $this->request->variable('workshops_tuition_amount', 500.0, true),
+			'workshops_max_attendees' => $this->request->variable('workshops_max_attendees', 10, true),
 		);
 
 		return $workshop_info;
@@ -251,7 +267,8 @@ class workshop_controller
 			'workshops_start_date' => $workshop_data[ 'workshops_start_date' ],
 			'workshops_end_date' => $workshop_data[ 'workshops_end_date' ],
 			'workshops_deposit_amount' => $workshop_data[ 'workshops_deposit_amount' ],
-			'workshops_tuition_amount' => $workshop_data[ 'workshops_tuition_amount' ]
+			'workshops_tuition_amount' => $workshop_data[ 'workshops_tuition_amount' ],
+			'workshops_max_attendees' => $workshop_data[ 'workshops_max_attendees' ],
 			)
 		);
 	}
